@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Haven</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+</head>
+
+<body class="bg-white text-slate-800">
+
+<header class="glass-header sticky top-0 z-50 px-4 py-3 border-b">
+  <div class="max-w-md mx-auto flex justify-between items-center">
+    <h2 class="font-bold text-xl text-blue-700 flex items-center gap-2">
+      <span class="material-symbols-outlined">pets</span> Pet Haven
+    </h2>
+    <button onclick="enviarWhatsApp()" class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold">
+      FINALIZAR
+    </button>
+  </div>
+</header>
+
+<main class="max-w-md mx-auto">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Tudo para seu pet</h1>
+    <p>Rações, acessórios e banho & tosa com pedido direto no WhatsApp</p>
+  </div>
+</section>
+
+<!-- FILTROS -->
+<div class="grid grid-cols-3 gap-3 p-4">
+  <button class="filtro" onclick="filtrarCategoria('racao')">Rações</button>
+  <button class="filtro" onclick="filtrarCategoria('acessorio')">Acessórios</button>
+  <button class="filtro" onclick="filtrarCategoria('banho')">Banho & Tosa</button>
+</div>
+
+<!-- PRODUTOS -->
+<section class="grid grid-cols-2 gap-4 p-4">
+
+<div class="produto" data-categoria="racao">
+  <img src="https://images.unsplash.com/photo-1682536192307-c25211b1d4ac?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZG9nJTIwcmElQzMlQTclQzMlQTNvfGVufDB8fDB8fHww">
+  <h4>Ração Premium 5kg</h4>
+  <p>R$ 125,00</p>
+  <button onclick="adicionarCarrinho('Ração Premium 5kg',125)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="racao">
+  <img src="https://images.unsplash.com/photo-1655210913315-e8147faf7600?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGRvZyUyMHJhJUMzJUE3JUMzJUEzb3xlbnwwfHwwfHx8MA%3D%3D">
+  <h4>Ração Premium 5kg</h4>
+  <p>R$ 125,00</p>
+  <button onclick="adicionarCarrinho('Ração Premium 5kg',125)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="acessorio">
+  <img src="https://images.unsplash.com/photo-1535294435445-d7249524ef2e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZG9nJTIwYnJpbnF1ZWRvc3xlbnwwfHwwfHx8MA%3D%3D">
+  <h4>Brinquedo Mordedor</h4>
+  <p>R$ 45,00</p>
+  <button onclick="adicionarCarrinho('Brinquedo Mordedor',45)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="acessorio">
+  <img src="https://images.unsplash.com/photo-1581888227599-779811939961?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZG9nJTIwY2FtYXxlbnwwfHwwfHx8MA%3D%3D">
+  <h4>Cama Ortopédica</h4>
+  <p>R$ 180,00</p>
+  <button onclick="adicionarCarrinho('Cama Ortopédica',180)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="banho">
+  <img src="https://images.unsplash.com/photo-1647002380358-fc70ed2f04e0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZG9nJTIwYmFuaG98ZW58MHx8MHx8fDA%3D">
+  <h4>Banho e Tosa</h4>
+  <p>R$ 70,00</p>
+  <button onclick="adicionarCarrinho('Banho e Tosa',70)">Adicionar</button>
+</div>
+
+<div class="produto" data-categoria="banho">
+  <img src="https://plus.unsplash.com/premium_photo-1664297694687-570b7f392906?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fGRvZyUyMGJhbmhvfGVufDB8fDB8fHww">
+  <h4>Banho e Tosa</h4>
+  <p>R$ 70,00</p>
+  <button onclick="adicionarCarrinho('Banho e Tosa',70)">Adicionar</button>
+</div>
+
+</section>
+
+<!-- CARRINHO -->
+<section class="carrinho">
+  <h3>🛒 Carrinho</h3>
+
+  <div id="lista-carrinho"></div>
+
+  <div class="total">
+    Total: R$ <span id="total">0.00</span>
+  </div>
+
+  <button class="btn-finalizar" onclick="enviarWhatsApp()">
+    Enviar pedido no WhatsApp
+  </button>
+</section>
+
+</main>
+
+<script src="js/script.js"></script>
+</body>
+</html>

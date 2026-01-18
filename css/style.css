@@ -1,0 +1,114 @@
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+/* HEADER */
+.glass-header {
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(12px);
+}
+
+/* HERO */
+.hero {
+  background-image: linear-gradient(
+    rgba(0,0,0,0.3),
+    rgba(0,0,0,0.8)
+  ),
+  url("https://images.unsplash.com/photo-1548199973-03cce0bbc87b");
+  background-size: cover;
+  background-position: center;
+  height: 65vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 24px;
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.hero-content p {
+  margin-top: 8px;
+}
+
+/* FILTROS */
+.filtro {
+  background: #e0f2fe;
+  color: #0369a1;
+  padding: 10px;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+/* PRODUTOS */
+.produto {
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.produto img {
+  height: 140px;
+  object-fit: cover;
+}
+
+.produto h4 {
+  font-weight: bold;
+  padding: 8px 12px 0;
+}
+
+.produto p {
+  padding: 0 12px;
+  color: #2563eb;
+  font-weight: bold;
+}
+
+.produto button {
+  margin: 12px;
+  background: #2563eb;
+  color: white;
+  padding: 10px;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+/* CARRINHO */
+.carrinho {
+  position: sticky;
+  bottom: 0;
+  background: #ffffff;
+  border-top: 2px solid #e5e7eb;
+  padding: 16px;
+}
+
+.item-carrinho {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.item-carrinho button {
+  background: #ef4444;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+.total {
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.btn-finalizar {
+  width: 100%;
+  background: #25d366;
+  color: white;
+  padding: 12px;
+  border-radius: 12px;
+  font-weight: bold;
+}
